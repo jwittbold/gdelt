@@ -38,7 +38,7 @@ def unzip(path):
     zip_ref.close()
 
 
-# start date specified as string in the formay of YEAR, MONTH, DAY, 00:00:00 hour in 15 minute intervals 
+# start date specified as string in the format of YEAR, MONTH, DAY, 00:00:00 hour in 15 minute intervals 
 def get(start_date='20210323000000'):
 
 
