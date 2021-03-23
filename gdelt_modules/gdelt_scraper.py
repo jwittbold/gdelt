@@ -7,8 +7,8 @@ import csv
 import concurrent.futures
 
 base_path = os.path.dirname(os.path.abspath(__file__))
-download_path = os.path.join(base_path, '/Users/jackwittbold/Desktop/gdelt_data/historic')
-zip_extract_path = os.path.join('/Users/jackwittbold/Desktop/gdelt_data/historic')
+download_path = os.path.join(base_path, '')
+zip_extract_path = os.path.join('')
 
 
 def download_file(url):
