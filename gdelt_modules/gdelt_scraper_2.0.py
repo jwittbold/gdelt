@@ -2,11 +2,9 @@ import os
 import zipfile
 import requests
 import sys
-import datetime
 import csv
 import concurrent.futures
 
- 
 
 base_path = os.path.dirname(os.path.abspath(__file__))
 download_path = os.path.join(base_path, '')  # add path to desired download directory.
