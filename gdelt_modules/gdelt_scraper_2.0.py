@@ -12,6 +12,12 @@ zip_extract_path = os.path.join('')          # add path to desired unzip directo
 
 
 def unpacker(list):
+    """Iterates through URLs in target_list, passes them to the download_file() and unzip() function
+    
+    Parameters: 
+    list (str): set to target_list variable which refers to value lists within suffix_dict.
+    
+    """
     for target_url in Collector.target_list:
         filename = download_file(target_url)
         try:
@@ -23,6 +29,12 @@ def unpacker(list):
 
 
 def download_file(url):
+    """Downloads file. Removes prefix URL before 14 digit numeric date.
+    
+    Parameters:
+    url (str): Downloads from the URL contained within the variable passed to it within the upacker() function.
+
+    """
     print('downloading', url)
     local_filename = url.split('/')[-1]
     local_filename = os.path.join(download_path, local_filename)
@@ -42,6 +54,12 @@ def download_file(url):
 
 
 def unzip(path):
+    """ unzips file to path specified. 
+    
+    Parameters:
+    path (str): Path to unzip directory. 
+    
+    """
     print('unzipping:', path)
     zip_ref = zipfile.ZipFile(path, 'r')
     zip_ref.extractall(zip_extract_path)
@@ -65,6 +83,13 @@ class Collector:
 
 
     def target_collector(self, feeds, start_date):
+        """Reads each line for feed in feeds. If line has one of the six corresponding gdelt suffixes, from beginning from desired start date,
+        a dictionary key is created for it and parsed URL is added as key value. 
+
+        Parameters:
+        feeds (str): The gdelt masterfile URLs to be parsed and downloaded from.
+        start_date (str): numerical 14 digit string formatted as YEAR MONTH DAY 00 (hour) 00 (min) 00 (sec) e.g.'20150218224500'.
+        """
         
         for feed in feeds:
 
@@ -77,7 +102,7 @@ class Collector:
                     continue
 
 
-                suffix_dict = {}
+                suffix_dict = {}    # stores key_suffix and associated target_url(s)
 
                 key_suffix = ('.export.CSV.zip',
                             '.gkg.csv.zip',
@@ -93,8 +118,8 @@ class Collector:
                     suffix = target_url[52:]                # slices 'target_url' at index value 52 and assigns remainder to variable 'suffix' 
                                                             
                     if suffix not in suffix_dict:           
-                        suffix_dict[suffix] = []            # if suffix not in suffix_dict, a key of suffix is created and it's valus is set to an empty list []
-                    if suffix in suffix_dict.keys():        # if suffix already in suffix_dict, it skips it
+                        suffix_dict[suffix] = []            # if suffix not in suffix_dict, a key of suffix is created and it's value is set to an empty list []
+                    if suffix in suffix_dict.keys():        # if suffix already a key in suffix_dict, it skips it
                         pass
 
                     parsed_date = target_url[37:50]         # line is then parsed for the numeric portion corresponding to a date, number assigned to 'parsed_date' variable
