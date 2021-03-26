@@ -83,7 +83,7 @@ class Collector:
 
 
     def target_collector(self, feeds, start_date):
-        """Reads each line for feed in feeds. If line has one of the six corresponding gdelt suffixes, from beginning from desired start date,
+        """Reads each line for feed in feeds. If line has one of the six corresponding gdelt suffixes, beginning from desired start date,
         a dictionary key is created for it and parsed URL is added as key value. 
 
         Parameters:
