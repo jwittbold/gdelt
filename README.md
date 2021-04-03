@@ -6,5 +6,5 @@ As such, GDELT data lends itself to many possible use cases, most notably perhap
 
 From a data engineering perspective, the GDELT dataset poses many challenges and requires employing the most current and sophisticated data engineering practices in order to successfully work with it.
 
-For these reasons, I have chosen to focus my capstone project on building a GDELT database and exploring some of the possible ways in which in may be used for future analysis.
+For these reasons, I have chosen to focus my capstone project on building a GDELT database and exploring some of the possible ways in which it may be used for future data analysis.
 
