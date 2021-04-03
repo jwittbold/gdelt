@@ -9,8 +9,8 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 base_path = os.path.dirname(os.path.abspath(__file__))
-download_path = os.path.join(base_path, '')  # USER ACTION: add path to desired download directory.
-zip_extract_path = os.path.join(base_path, '')          # USER ACTION: add path to desired unzip directory.
+download_path = os.path.join(base_path, '/Users/jackwittbold/Desktop/gdelt_data/test')  # USER ACTION: add path to desired download directory.
+zip_extract_path = os.path.join(base_path, '/Users/jackwittbold/Desktop/gdelt_data/test')          # USER ACTION: add path to desired unzip directory.
 
 
 def unpacker(lst):
@@ -142,13 +142,13 @@ if __name__ == "__main__":
     # feeds contains URLs to be scraped
     feeds = [
             'http://data.gdeltproject.org/gdeltv2/masterfilelist.txt',
-            'http://data.gdeltproject.org/gdeltv2/masterfilelist-translation.txt'
+            # 'http://data.gdeltproject.org/gdeltv2/masterfilelist-translation.txt'
             ]
 
 
     # start_date is formatted as YEAR MONTH DAY 00 (hour) 00 (min) 00 (sec). GDELT feeds update every 15 minutes  
-    start_date = '20150218224500'    # corresponds to first date in 'http://data.gdeltproject.org/gdeltv2/masterfilelist-translation.txt', uncomment to collect GDELT v2 data since first availale.
-    
+    # start_date = '20150218224500'    # corresponds to first date in 'http://data.gdeltproject.org/gdeltv2/masterfilelist-translation.txt', uncomment to collect GDELT v2 data since first availale.
+    start_date = '20210401000000'
 
     Collector.target_collector(self=Collector, feeds=feeds, start_date=start_date)
  
